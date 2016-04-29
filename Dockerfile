@@ -1,4 +1,4 @@
-FROM stevenmc/docker-php7:latest
+FROM bytepark/alpine-nginx:latest
 MAINTAINER Steven McCullagh <stevenmccullagh@gmail.com>
 
 ENV IMAGICK_VERSION=3.4.1
