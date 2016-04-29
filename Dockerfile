@@ -34,7 +34,6 @@ RUN cd / && \
     make install && \
     echo "extension=imagick.so" > /etc/php7/conf.d/imagick.ini
 
-
 COPY /ops /
 
 # Small fixes
@@ -47,10 +46,6 @@ RUN ln -s /etc/php7 /etc/php && \
 # Install composer global bin
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
-
-# ADD SOURCE
-ONBUILD COPY ./src /usr/share/nginx/html
-ONBUILD RUN chown -Rf nginx:nginx /usr/share/nginx/html
 
 # Setup Volume
 VOLUME ["/usr/share/nginx/html"]
